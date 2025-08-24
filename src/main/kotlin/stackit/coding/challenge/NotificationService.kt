@@ -17,14 +17,14 @@ class NotificationService {
     fun triageNotification(notification: Notification) {
         LOG.debug("Triage notification: ${notification.type}")
 
-        if (notification.type == "Info") {
-            LOG.debug("Notification type is Info, skipping Slack API call")
-        } else if (notification.type == "Warning") {
+        if (notification.type == "Warning") {
             // https://api.slack.com/messaging/webhooks
             val response = slack.sendWarning(
                 message = SlackMessage(notification.toString())
             )
             LOG.debug("Slack API Test response: ${response}")
+        } else {
+            LOG.debug("Notification type is Info, skipping Slack API call")
         }
     }
 }
