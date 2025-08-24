@@ -2,6 +2,7 @@ package stackit.coding.challenge
 
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
+import org.eclipse.microprofile.rest.client.inject.RestClient
 import org.jboss.logging.Logger
 
 @ApplicationScoped
@@ -10,6 +11,7 @@ class NotificationService {
     val LOG: Logger = Logger.getLogger(this.javaClass)
 
     @Inject
+    @RestClient
     private lateinit var slack: SlackHttpClient
 
     fun triageNotification(notification: Notification) {
