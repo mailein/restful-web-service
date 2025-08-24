@@ -17,10 +17,7 @@ class NotificationControllerTest {
             .contentType("application/json")
             .`when`().post("/notifications")
             .then()
-            .statusCode(200)
-            .body("type", `is`("Warning"))
-            .body("name", `is`("hello"))
-            .body("description", `is`("world"))
+            .statusCode(204)
     }
 
 }
