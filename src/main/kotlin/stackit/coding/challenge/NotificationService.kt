@@ -21,7 +21,9 @@ class NotificationService {
             LOG.debug("Notification type is Info, skipping Slack API call")
         } else if (notification.type == "Warning") {
             // https://api.slack.com/messaging/webhooks
-            val response = slack.sendWarning(notification)
+            val response = slack.sendWarning(
+                message = SlackMessage(notification.toString())
+            )
             LOG.debug("Slack API Test response: ${response}")
         }
     }

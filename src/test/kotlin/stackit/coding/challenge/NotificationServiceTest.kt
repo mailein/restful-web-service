@@ -21,7 +21,7 @@ class NotificationServiceTest {
         val notification = Notification("Warning", "hello", "world")
 
         notificationService.triageNotification(notification)
-        Mockito.verify(slack).sendWarning(notification)
+        Mockito.verify(slack).sendWarning(SlackMessage(notification.toString()))
     }
 
     @Test
@@ -29,7 +29,7 @@ class NotificationServiceTest {
         val notification = Notification("Info", "hello", "world")
 
         notificationService.triageNotification(notification)
-        Mockito.verify(slack, Mockito.never()).sendWarning(notification)
+        Mockito.verify(slack, Mockito.never()).sendWarning(SlackMessage(notification.toString()))
     }
 
 }

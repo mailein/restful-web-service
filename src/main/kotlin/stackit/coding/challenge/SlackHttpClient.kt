@@ -9,5 +9,9 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient
 interface SlackHttpClient {
 
     @POST
-    fun sendWarning(notification: Notification)
+    fun sendWarning(message: SlackMessage)
 }
+
+data class SlackMessage(
+    val text: String
+)
