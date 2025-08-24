@@ -1,0 +1,12 @@
+### https://api.slack.com/apps/A09CLR5FS1E/incoming-webhooks?success=1
+
+# curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
+POST https://hooks.slack.com/services/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
+Content-Type: application/json
+
+{
+  "text": "Hello, World!"
+}
+
+###
+
