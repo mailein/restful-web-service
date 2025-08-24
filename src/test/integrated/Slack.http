@@ -10,3 +10,22 @@ Content-Type: application/json
 
 ###
 
+POST localhost:8080/notifications
+Content-Type: application/json
+
+{
+    "Type": "Info",
+    "Name": "Quota Exceeded",
+    "Description": "Compute Quota exceeded"
+}
+
+###
+
+POST localhost:8080/notifications
+Content-Type: application/json
+
+{
+  "Type": "Warning",
+  "Name": "Backup Failure",
+  "Description": "The backup failed due to a database problem"
+}
