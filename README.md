@@ -1,5 +1,10 @@
 # restful-web-server
 
+## What is it?
+- A service receives POST requests of type Warning or Info
+- The service sends a POST request to Slack for each Warning
+
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
